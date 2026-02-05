@@ -1,0 +1,39 @@
+<changeSet id="008-create-audit_logs-table" author="Vinu">
+    <createTable tableName="audit_logs">
+        <column name="id" type="BIGINT" autoIncrement="true">
+            <constraints primaryKey="true" nullable="false"/>
+        </column>
+        <column name="user_id" type="BIGINT"/>
+        <column name="action" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="entity" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="entity_id" type="BIGINT">
+            <constraints nullable="false"/>
+        </column>
+        <column name="created_at" type="TIMESTAMP">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+
+    <addForeignKeyConstraint
+        constraintName="fk_audit_logs_users"
+        baseTableName="audit_logs"
+        baseColumnNames="user_id"
+        referencedTableName="users"
+        referencedColumnNames="id"
+        />
+
+    <createIndex indexName="idx_audit_logs_users_id" tableName="audit_logs">
+        <column name="user_id"/>
+    </createIndex>
+    <createIndex indexName="idx_audit_logs_entity_id" tableName="audit_logs">
+        <column name="entity_id"/>
+    </createIndex>
+
+    <rollback>
+        <dropTable tableName="audit_logs"/>
+    </rollback>
+</changeSet>
