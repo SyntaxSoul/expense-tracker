@@ -1,0 +1,66 @@
+<changeSet id="005-create-expenses-table" author="Vinu">
+    <createTable tableName="expenses">
+        <column name="id" type="BIGINT" autoIncrement="true">
+            <constraints primaryKey="true" nullable="false"/>
+        </column>
+        <column name="account_id" type="BIGINT">
+            <constraints nullable="false"/>
+        </column>
+        <column name="category_id" type="BIGINT">
+            <constraints nullable="false"/>
+        </column>
+        <column name="payment_method_id" type="BIGINT">
+            <constraints nullable="false"/>
+        </column>
+        <column name="amount" type="decimal(10,2)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="expense_date" type="date">
+            <constraints nullable="false"/>
+        </column>
+        <column name="description" type="varchar(255)"/>
+        <column name="created_at" type="timestamp">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+
+    <createIndex indexName="idx_expenses_expense_date" tableName="expenses">
+        <column name="expense_date"/>
+    </createIndex>
+    <createIndex indexName="idx_expenses_categories_id" tableName="expenses">
+        <column name="category_id"/>
+    </createIndex>
+    <createIndex indexName="idx_expenses_payment_methods_id" tableName="expenses">
+        <column name="payment_method_id"/>
+    </createIndex>
+    <createIndex indexName="idx_expenses_accounts" tableName="expenses">
+        <column name="account_id"/>
+    </createIndex>
+
+    <addForeignKeyConstraint
+            constraintName="fk_expenses_accounts"
+            baseTableName="expenses"
+            baseColumnNames="account_id"
+            referencedTableName="accounts"
+            referencedColumnNames="id"
+    />
+    <addForeignKeyConstraint
+        constraintName="fk_expenses_categories"
+        baseTableName="expenses"
+        baseColumnNames="category_id"
+        referencedTableName="categories"
+        referencedColumnNames="id"
+        />
+    <addForeignKeyConstraint
+        constraintName="fk_expenses_payment_methods"
+        baseTableName="expenses"
+        baseColumnNames="payment_method_id"
+        referencedTableName="payment_methods"
+        referencedColumnNames="id"
+        />
+
+    <rollback>
+        <dropTable tableName="expenses"/>
+    </rollback>
+
+</changeSet>
