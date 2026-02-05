@@ -1,0 +1,18 @@
+<changeSet id="003-create-categories-table" author="Vinu">
+    <createTable tableName="categories">
+        <column name="id" type="BIGINT" autoIncrement="true">
+            <constraints primaryKey="true" nullable="false"/>
+        </column>
+        <column name="name" type="VARCHAR(50)">
+            <constraints unique="true" nullable="false"/>
+        </column>
+        <column name="type" type="VARCHAR(20)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="active" type="BOOLEAN"/>
+    </createTable>
+
+    <rollback>
+        <dropTable tableName="categories"/>
+    </rollback>
+</changeSet>
