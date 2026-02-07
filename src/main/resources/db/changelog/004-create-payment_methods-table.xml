@@ -1,20 +1,29 @@
-<changeSet id="004-create-payment_methods-table" author="Vinu">
-    <createTable tableName="payment_methods">
-        <column name="id" type="BIGINT" autoIncrement="true">
-            <constraints primaryKey="true" nullable="false"/>
-        </column>
-        <column name="name" type="VARCHAR(50)">
-            <constraints nullable="false"/>
-        </column>
-        <column name="details" type="VARCHAR(200)"/>
-        <column name="active" type="BOOLEAN"/>
-    </createTable>
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.27.xsd">
 
-    <createIndex indexName="idx_payment_methods_name" tableName="payment_methods">
-        <column name="name"/>
-    </createIndex>
+    <changeSet id="004-create-payment_methods-table" author="Vinu">
+        <createTable tableName="payment_methods">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="details" type="VARCHAR(200)"/>
+            <column name="active" type="BOOLEAN"/>
+        </createTable>
 
-    <rollback>
-        <dropTable tableName="payment_methods"/>
-    </rollback>
-</changeSet>
+        <createIndex indexName="idx_payment_methods_name" tableName="payment_methods">
+            <column name="name"/>
+        </createIndex>
+
+        <rollback>
+            <dropTable tableName="payment_methods"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

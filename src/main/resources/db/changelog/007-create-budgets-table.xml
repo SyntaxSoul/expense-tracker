@@ -1,54 +1,63 @@
-<changeSet id="007-create-budget-table" author="Vinu">
-    <createTable tableName="budgets">
-        <column name="id" type="BIGINT" autoIncrement="true">
-            <constraints primaryKey="true" nullable="false"/>
-        </column>
-        <column name="category_id" type="BIGINT">
-            <constraints nullable="false" />
-        </column>
-        <column name="month" type="INT">
-            <constraints nullable="false" />
-        </column>
-        <column name="year" type="INT">
-            <constraints nullable="false" />
-        </column>
-        <column name="limit_amount" type="DECIMAL(10,2)">
-            <constraints nullable="false"/>
-        </column>
-        <column name="created_at" type="TIMESTAMP">
-            <constraints nullable="false"/>
-        </column>
-    </createTable>
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.27.xsd">
 
-    <createIndex indexName="idx_budgets_category_id" tableName="budgets">
-        <column name="category_id"/>
-    </createIndex>
+    <changeSet id="007-create-budget-table" author="Vinu">
+        <createTable tableName="budgets">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="category_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="month" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="year" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="limit_amount" type="DECIMAL(10,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
 
-    <createIndex indexName="idx_budgets_year" tableName="budgets">
-        <column name="year"/>
-    </createIndex>
+        <createIndex indexName="idx_budgets_category_id" tableName="budgets">
+            <column name="category_id"/>
+        </createIndex>
 
-    <createIndex indexName="idx_budgets_month" tableName="budgets">
-        <column name="month"/>
-    </createIndex>
+        <createIndex indexName="idx_budgets_year" tableName="budgets">
+            <column name="year"/>
+        </createIndex>
 
-    <addForeignKeyConstraint
-        constraintName="fk_budgets_categories"
-        baseTableName="budgets"
-        baseColumnNames="category_id"
-        referencedTableName="categories"
-        referencedColumnNames="id"
-    />
+        <createIndex indexName="idx_budgets_month" tableName="budgets">
+            <column name="month"/>
+        </createIndex>
 
-    <addUniqueConstraint
-            tableName="budgets"
-            columnNames="category_id,month,year"
-            constraintName="uk_budgets_category_month_year"/>
+        <addForeignKeyConstraint
+                constraintName="fk_budgets_categories"
+                baseTableName="budgets"
+                baseColumnNames="category_id"
+                referencedTableName="categories"
+                referencedColumnNames="id"
+        />
 
-    <!-- This ensures category_id + month + year combination is unique -->
+        <addUniqueConstraint
+                tableName="budgets"
+                columnNames="category_id,month,year"
+                constraintName="uk_budgets_category_month_year"/>
 
-    <rollback>
-        <dropTable tableName="budgets"/>
-    </rollback>
+        <!-- This ensures category_id + month + year combination is unique -->
 
-</changeSet>
+        <rollback>
+            <dropTable tableName="budgets"/>
+        </rollback>
+
+    </changeSet>
+</databaseChangeLog>

@@ -5,14 +5,13 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.27.xsd">
 
-    <include file="db/changelog/001-create-users-table.xml"/>
-    <include file="db/changelog/002-create-accounts-table.xml"/>
-    <include file="db/changelog/003-create-categories-table.xml"/>
-    <include file="db/changelog/004-create-payment-methods-table.xml"/>
-    <include file="db/changelog/005-create-expenses-table.xml"/>
-    <include file="db/changelog/006-create-income-table.xml"/>
-    <include file="db/changelog/007-create-budget-table.xml"/>
-    <include file="db/changelog/008-create-audit_logs-table.xml"/>
+    <include file="001-create-users-table.xml" relativeToChangelogFile="true"/>
+    <include file="002-create-accounts-table.xml" relativeToChangelogFile="true"/>
+    <include file="003-create-categories-table.xml" relativeToChangelogFile="true"/>
+    <include file="004-create-payment_methods-table.xml" relativeToChangelogFile="true"/>
+    <include file="005-create-expenses-table.xml" relativeToChangelogFile="true"/>
+    <include file="006-create-income-table.xml" relativeToChangelogFile="true"/>
+    <include file="007-create-budgets-table.xml" relativeToChangelogFile="true"/>
+    <include file="008-create-audit_logs-table.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
-

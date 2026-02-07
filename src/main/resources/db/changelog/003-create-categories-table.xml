@@ -1,18 +1,27 @@
-<changeSet id="003-create-categories-table" author="Vinu">
-    <createTable tableName="categories">
-        <column name="id" type="BIGINT" autoIncrement="true">
-            <constraints primaryKey="true" nullable="false"/>
-        </column>
-        <column name="name" type="VARCHAR(50)">
-            <constraints unique="true" nullable="false"/>
-        </column>
-        <column name="type" type="VARCHAR(20)">
-            <constraints nullable="false"/>
-        </column>
-        <column name="active" type="BOOLEAN"/>
-    </createTable>
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.27.xsd">
 
-    <rollback>
-        <dropTable tableName="categories"/>
-    </rollback>
-</changeSet>
+    <changeSet id="003-create-categories-table" author="Vinu">
+        <createTable tableName="categories">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(50)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="type" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="active" type="BOOLEAN"/>
+        </createTable>
+
+        <rollback>
+            <dropTable tableName="categories"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
