@@ -1,0 +1,31 @@
+package com.expensetracker.model;
+
+public class Category {
+    private long id;
+    private String name;
+    private String type;
+    private Boolean active;
+
+    public Category(long id, String name, String type, Boolean active) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.active = active;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+}
