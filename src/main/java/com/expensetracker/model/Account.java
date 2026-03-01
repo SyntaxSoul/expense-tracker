@@ -4,13 +4,13 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class Account {
-    private long id;
+    private Long id;
     private long userId;
     private String name;
     private BigDecimal balance;
     private LocalDateTime createdAt;
 
-    public Account(long id, long userId, String name, BigDecimal balance, LocalDateTime createdAt) {
+    public Account(Long id, long userId, String name, BigDecimal balance, LocalDateTime createdAt) {
         this.id = id;
         this.userId = userId;
         this.name = name;
@@ -30,11 +30,19 @@ public class Account {
         return this.name;
     }
 
-    public BigDecimal balance() {
+    public BigDecimal getBalance() {
         return this.balance;
     }
 
     public LocalDateTime getCreatedAt() {
         return this.createdAt;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
     }
 }

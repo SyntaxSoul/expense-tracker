@@ -3,13 +3,13 @@ package com.expensetracker.model;
 import java.time.LocalDateTime;
 
 public class User {
-    private long id;
+    private Long id;
     private String name;
     private String email;
     private String status;
     private LocalDateTime createdAt;
 
-    public User(long id, String name, String email, String status, LocalDateTime createdAt) {
+    public User(Long id, String name, String email, String status, LocalDateTime createdAt) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -37,4 +37,11 @@ public class User {
         return this.createdAt;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name=name;
+    }
 }

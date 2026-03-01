@@ -1,12 +1,12 @@
 package com.expensetracker.model;
 
 public class PaymentMethod {
-    private long id;
+    private Long id;
     private String name;
     private String details;
     private Boolean active;
 
-    public PaymentMethod(long id, String name, String details, Boolean active) {
+    public PaymentMethod(Long id, String name, String details, Boolean active) {
         this.id = id;
         this.name = name;
         this.details = details;
@@ -27,5 +27,13 @@ public class PaymentMethod {
 
     public Boolean getActive() {
         return active;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setActive(boolean active) {
+        this.active=active;
     }
 }

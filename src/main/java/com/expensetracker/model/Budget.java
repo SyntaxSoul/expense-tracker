@@ -4,14 +4,14 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class Budget {
-    private long id;
+    private Long id;
     private long categoryId;
     private int month;
     private int year;
     private BigDecimal limitAmount;
     private LocalDateTime createdAt;
 
-    public Budget(long id, long categoryId, int month, int year, BigDecimal limitAmount, LocalDateTime createdAt) {
+    public Budget(Long id, long categoryId, int month, int year, BigDecimal limitAmount, LocalDateTime createdAt) {
         this.id = id;
         this.categoryId = categoryId;
         this.month = month;
@@ -20,7 +20,7 @@ public class Budget {
         this.createdAt = createdAt;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -42,5 +42,13 @@ public class Budget {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public void setLimitAmount(BigDecimal limitAmount) {
+        this.limitAmount=limitAmount;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

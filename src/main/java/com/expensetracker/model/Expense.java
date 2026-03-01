@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Expense {
-    private long id;
+    private Long id;
     private long accountId;
     private long categoryId;
     private long paymentMethodId;
@@ -14,7 +14,7 @@ public class Expense {
     private String description;
     private LocalDateTime createdAt;
 
-    public Expense(long id, long accountId, long categoryId, long paymentMethodId, BigDecimal amount, LocalDate expenseDate, String description, LocalDateTime createdAt) {
+    public Expense(Long id, long accountId, long categoryId, long paymentMethodId, BigDecimal amount, LocalDate expenseDate, String description, LocalDateTime createdAt) {
         this.id = id;
         this.accountId = accountId;
         this.categoryId = categoryId;
@@ -57,4 +57,11 @@ public class Expense {
         return createdAt;
     }
 
+    public void setAmount(BigDecimal amount) {
+        this.amount=amount;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

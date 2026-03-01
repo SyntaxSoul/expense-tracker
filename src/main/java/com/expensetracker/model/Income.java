@@ -5,14 +5,14 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Income {
-    private long id;
+    private Long id;
     private long accountId;
     private String source;
     private BigDecimal amount;
     private LocalDate incomeDate;
     private LocalDateTime createdAt;
 
-    public Income(long id, long accountId, String source, BigDecimal amount, LocalDate incomeDate, LocalDateTime createdAt) {
+    public Income(Long id, long accountId, String source, BigDecimal amount, LocalDate incomeDate, LocalDateTime createdAt) {
         this.id = id;
         this.accountId = accountId;
         this.source = source;
@@ -43,5 +43,13 @@ public class Income {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 }

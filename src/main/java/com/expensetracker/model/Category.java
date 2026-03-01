@@ -1,19 +1,19 @@
 package com.expensetracker.model;
 
 public class Category {
-    private long id;
+    private Long id;
     private String name;
     private String type;
     private Boolean active;
 
-    public Category(long id, String name, String type, Boolean active) {
+    public Category(Long id, String name, String type, Boolean active) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.active = active;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -27,5 +27,13 @@ public class Category {
 
     public Boolean getActive() {
         return active;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setActive(boolean active) {
+        this.active=active;
     }
 }

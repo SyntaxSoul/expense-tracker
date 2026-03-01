@@ -3,14 +3,14 @@ package com.expensetracker.model;
 import java.time.LocalDateTime;
 
 public class AuditLog {
-    private long id;
+    private Long id;
     private long userId;
     private String action;
     private String entity;
     private long entityId;
     private LocalDateTime createdAt;
 
-    public AuditLog(long id, long userId, String action, String entity, long entityId, LocalDateTime createdAt) {
+    public AuditLog(Long id, long userId, String action, String entity, long entityId, LocalDateTime createdAt) {
         this.id = id;
         this.userId = userId;
         this.action = action;
@@ -41,5 +41,9 @@ public class AuditLog {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
