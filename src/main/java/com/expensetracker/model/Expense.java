@@ -6,9 +6,9 @@ import java.time.LocalDateTime;
 
 public class Expense {
     private Long id;
-    private long accountId;
-    private long categoryId;
-    private long paymentMethodId;
+    private Long accountId;
+    private Long categoryId;
+    private Long paymentMethodId;
     private BigDecimal amount;
     private LocalDate expenseDate;
     private String description;
@@ -25,19 +25,19 @@ public class Expense {
         this.createdAt = createdAt;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
-    public long getCategoryId() {
+    public Long getCategoryId() {
         return categoryId;
     }
 
-    public long getPaymentMethodId() {
+    public Long getPaymentMethodId() {
         return paymentMethodId;
     }
 
@@ -63,5 +63,9 @@ public class Expense {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

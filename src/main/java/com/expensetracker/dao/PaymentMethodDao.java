@@ -17,7 +17,7 @@ public class PaymentMethodDao {
 
             ps.setString(1, paymentMethod.getName());
             ps.setString(2, paymentMethod.getDetails());
-            ps.setBoolean(3, paymentMethod.getActive());
+            ps.setBoolean(3, paymentMethod.getStatus());
 
             ps.executeUpdate();
             try (ResultSet rs = ps.getGeneratedKeys()) {
@@ -80,7 +80,7 @@ public class PaymentMethodDao {
 
             ps.setString(1, paymentMethod.getName());
             ps.setString(2, paymentMethod.getDetails());
-            ps.setBoolean(3, paymentMethod.getActive());
+            ps.setBoolean(3, paymentMethod.getStatus());
             ps.setLong(4, paymentMethod.getId());
             int rows = ps.executeUpdate();
             return rows > 0;
@@ -93,7 +93,7 @@ public class PaymentMethodDao {
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
-            ps.setBoolean(1, paymentMethod.getActive());
+            ps.setBoolean(1, paymentMethod.getStatus());
             ps.setLong(2, paymentMethod.getId());
             int rows = ps.executeUpdate();
             return rows > 0;

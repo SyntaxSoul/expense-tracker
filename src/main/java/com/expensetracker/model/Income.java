@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 public class Income {
     private Long id;
-    private long accountId;
+    private Long accountId;
     private String source;
     private BigDecimal amount;
     private LocalDate incomeDate;
@@ -21,11 +21,11 @@ public class Income {
         this.createdAt = createdAt;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public long getAccountId() {
+    public Long getAccountId() {
         return accountId;
     }
 
@@ -51,5 +51,9 @@ public class Income {
 
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

@@ -6,10 +6,10 @@ public class User {
     private Long id;
     private String name;
     private String email;
-    private String status;
+    private Status status;
     private LocalDateTime createdAt;
 
-    public User(Long id, String name, String email, String status, LocalDateTime createdAt) {
+    public User(Long id, String name, String email, Status status, LocalDateTime createdAt) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -17,7 +17,7 @@ public class User {
         this.createdAt = createdAt;
     }
 
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 
@@ -29,7 +29,7 @@ public class User {
         return this.email;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return this.status;
     }
 
@@ -43,5 +43,13 @@ public class User {
 
     public void setName(String name) {
         this.name=name;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class AuditLog {
     private Long id;
-    private long userId;
+    private Long userId;
     private String action;
     private String entity;
     private long entityId;
@@ -19,11 +19,11 @@ public class AuditLog {
         this.createdAt = createdAt;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public long getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
@@ -35,7 +35,7 @@ public class AuditLog {
         return entity;
     }
 
-    public long getEntityId() {
+    public Long getEntityId() {
         return entityId;
     }
 
@@ -45,5 +45,9 @@ public class AuditLog {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

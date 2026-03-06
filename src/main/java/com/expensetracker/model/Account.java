@@ -5,12 +5,12 @@ import java.time.LocalDateTime;
 
 public class Account {
     private Long id;
-    private long userId;
+    private Long userId;
     private String name;
     private BigDecimal balance;
     private LocalDateTime createdAt;
 
-    public Account(Long id, long userId, String name, BigDecimal balance, LocalDateTime createdAt) {
+    public Account(Long id, Long userId, String name, BigDecimal balance, LocalDateTime createdAt) {
         this.id = id;
         this.userId = userId;
         this.name = name;
@@ -18,11 +18,11 @@ public class Account {
         this.createdAt = createdAt;
     }
 
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 
-    public long getUserId() {
+    public Long getUserId() {
         return this.userId;
     }
 
@@ -44,5 +44,9 @@ public class Account {
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

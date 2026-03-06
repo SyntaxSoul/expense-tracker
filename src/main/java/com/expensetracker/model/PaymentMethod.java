@@ -4,16 +4,16 @@ public class PaymentMethod {
     private Long id;
     private String name;
     private String details;
-    private Boolean active;
+    private Status status;
 
-    public PaymentMethod(Long id, String name, String details, Boolean active) {
+    public PaymentMethod(Long id, String name, String details, Status status) {
         this.id = id;
         this.name = name;
         this.details = details;
-        this.active = active;
+        this.status = status;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -25,15 +25,15 @@ public class PaymentMethod {
         return details;
     }
 
-    public Boolean getActive() {
-        return active;
+    public Status getStatus() {
+        return status;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public void setActive(boolean active) {
-        this.active=active;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }

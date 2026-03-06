@@ -5,9 +5,9 @@ import java.time.LocalDateTime;
 
 public class Budget {
     private Long id;
-    private long categoryId;
-    private int month;
-    private int year;
+    private Long categoryId;
+    private Integer month;
+    private Integer year;
     private BigDecimal limitAmount;
     private LocalDateTime createdAt;
 
@@ -24,15 +24,15 @@ public class Budget {
         return id;
     }
 
-    public long getCategoryId() {
+    public Long getCategoryId() {
         return categoryId;
     }
 
-    public int getMonth() {
+    public Integer getMonth() {
         return month;
     }
 
-    public int getYear() {
+    public Integer getYear() {
         return year;
     }
 
@@ -50,5 +50,9 @@ public class Budget {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

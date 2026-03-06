@@ -16,7 +16,7 @@ public class CategoryDao {
 
             ps.setString(1, category.getName());
             ps.setString(2, category.getType());
-            ps.setBoolean(3, category.getActive());
+            ps.setBoolean(3, category.getStatus());
 
             ps.executeUpdate();
             try (ResultSet rs = ps.getGeneratedKeys()) {
@@ -99,7 +99,7 @@ public class CategoryDao {
 
             ps.setString(1, category.getName());
             ps.setString(2, category.getType());
-            ps.setBoolean(3, category.getActive());
+            ps.setBoolean(3, category.getStatus());
             ps.setLong(4, category.getId());
 
             int rows = ps.executeUpdate();

@@ -121,7 +121,7 @@ public class UserDao {
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
-            ps.setString(1, user.getStatus());
+            ps.setString(1, user.getStatus().name());
             ps.setLong(2, user.getId());
 
             int rows = ps.executeUpdate();
